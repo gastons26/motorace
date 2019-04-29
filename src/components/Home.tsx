@@ -1,18 +1,48 @@
 import * as React from "react";
+import {ReactNode} from "react";
+import {InterviewStore} from "../stores/InterviewStore";
+import {InterviewModel} from "../stores/models/InterviewModel";
 
-export interface HelloProps {
-    compiler: string;
-    framework: string;
-}
 
-class Home extends React.Component<HelloProps, {}> {
-    render() {
-        return
-        <div className="main-wrapper">
-            <!-- Section Menu End -->
+export class Home extends React.Component {
+    private readonly _interviewStore: InterviewStore;
 
-            <!-- Section Slider Start -->
-            <!-- Slider Start -->
+    constructor(props: any) {
+        super(props);
+
+        this._interviewStore = new InterviewStore();
+
+        this.state = {
+            error: null,
+            isLoaded: false,
+            items: []
+        };
+    }
+
+    componentDidMount = () => {
+        (window as any).$('.testimonial-slider').slick({
+            slidesToShow: 1,
+            infinite: true,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            dots:true
+        });
+
+        this._interviewStore.getInterviews().then(
+            (data: Array<InterviewModel>) => {
+                console.log(data);
+                this.setState({
+                    isLoading: false,
+                    items: data
+                });
+            }
+        )
+
+    }
+
+    render(): ReactNode {
+        return <div className="main-wrapper">
             <section className="slider">
                 <div className="container">
                     <div className="row">
@@ -26,9 +56,7 @@ class Home extends React.Component<HelloProps, {}> {
                     </div>
                 </div>
             </section>
-            <!-- Section Slider End -->
 
-            <!-- Section Intro Start -->
             <section className="mt-80px">
                 <div className="container">
                     <div className="row ">
@@ -59,19 +87,19 @@ class Home extends React.Component<HelloProps, {}> {
                     </div>
                 </div>
             </section>
-            <!-- Section Intro End -->
 
-            <!-- Section About start -->
             <section className="section about">
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-lg-6">
-                            <img src="images/bg/bg-5.jpg" alt="" className="img-fluid rounded shadow w-100">
+                            <img src="assets/images/bg/bg-5.jpg" alt="" className="img-fluid rounded shadow w-100" />
                         </div>
 
                         <div className="col-lg-6">
                             <div className="pl-3 mt-5 mt-lg-0">
-                                <h2 className="mt-1 mb-3">We’ve skill in <br>wide <span className="text-color">range of fitness</span> and Other body health facility. </h2>
+                                <h2 className="mt-1 mb-3">
+                                    We’ve skill in <br />wide <span className="text-color">range of fitness</span> and Other body health facility.
+                                </h2>
 
                                 <p className="mb-4">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis Theme natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam lorem ante, dapibus in.</p>
 
@@ -81,9 +109,7 @@ class Home extends React.Component<HelloProps, {}> {
                     </div>
                 </div>
             </section>
-            <!-- Section About End -->
 
-            <!-- section Call To action start -->
             <section className="section cta">
                 <div className="container">
                     <div className="row justify-content-center">
@@ -100,9 +126,7 @@ class Home extends React.Component<HelloProps, {}> {
                     </div>
                 </div>
             </section>
-            <!-- section Call To action start -->
 
-            <!-- Section Services Start -->
             <section className="section services ">
                 <div className="container">
                     <div className="row justify-content-center">
@@ -161,9 +185,7 @@ class Home extends React.Component<HelloProps, {}> {
                     </div>
                 </div>
             </section>
-            <!-- Section Services End -->
 
-            <!-- Section Gallery Start -->
             <section className="gallery">
                 <div className="container">
                     <div className="row justify-content-center">
@@ -179,52 +201,49 @@ class Home extends React.Component<HelloProps, {}> {
                 <div className="container-fluid p-0">
                     <div className="row no-gutters portfolio-gallery">
                         <div className="col-lg-3 col-md-6 col-sm-6">
-                            <a href="images/gallery/gallery-01.jpg" className="popup-gallery">
-                                <img src="images/gallery/gallery-01.jpg" alt="" className="img-fluid">
+                            <a href="assets/images/gallery/gallery-01.jpg" className="popup-gallery">
+                                <img src="assets/images/gallery/gallery-01.jpg" alt="" className="img-fluid" />
                             </a>
                         </div>
                         <div className="col-lg-3 col-md-6 col-sm-6">
-                            <a href="images/gallery/gallery-02.jpg" className="popup-gallery">
-                                <img src="images/gallery/gallery-02.jpg" alt="" className="img-fluid" />
+                            <a href="assets/images/gallery/gallery-02.jpg" className="popup-gallery">
+                                <img src="assets/images/gallery/gallery-02.jpg" alt="" className="img-fluid" />
                             </a>
                         </div>
                         <div className="col-lg-3 col-md-6 col-sm-6">
-                            <a href="images/gallery/gallery-03.jpg" className="popup-gallery">
-                                <img src="images/gallery/gallery-03.jpg" alt="" className="img-fluid" />
+                            <a href="assets/images/gallery/gallery-03.jpg" className="popup-gallery">
+                                <img src="assets/images/gallery/gallery-03.jpg" alt="" className="img-fluid" />
                             </a>
                         </div>
                         <div className="col-lg-3 col-md-6 col-sm-6">
-                            <a href="images/gallery/gallery-04.jpg" className="popup-gallery">
-                                <img src="images/gallery/gallery-04.jpg" alt="" className="img-fluid" />
+                            <a href="assets/images/gallery/gallery-04.jpg" className="popup-gallery">
+                                <img src="assets/images/gallery/gallery-04.jpg" alt="" className="img-fluid" />
                             </a>
                         </div>
                         <div className="col-lg-3 col-md-6 col-sm-6">
-                            <a href="images/gallery/gallery-05.jpg" className="popup-gallery">
-                                <img src="images/gallery/gallery-05.jpg" alt="" className="img-fluid" />
+                            <a href="assets/images/gallery/gallery-05.jpg" className="popup-gallery">
+                                <img src="assets/images/gallery/gallery-05.jpg" alt="" className="img-fluid" />
                             </a>
                         </div>
                         <div className="col-lg-3 col-md-6 col-sm-6">
-                            <a href="images/gallery/gallery-06.jpg" className="popup-gallery">
-                                <img src="images/gallery/gallery-06.jpg" alt="" className="img-fluid" />
+                            <a href="assets/images/gallery/gallery-06.jpg" className="popup-gallery">
+                                <img src="assets/images/gallery/gallery-06.jpg" alt="" className="img-fluid" />
                             </a>
                         </div>
                         <div className="col-lg-3 col-md-6 col-sm-6">
-                            <a href="images/gallery/gallery-07.jpg" className="popup-gallery">
-                                <img src="images/gallery/gallery-07.jpg" alt="" className="img-fluid" />
+                            <a href="assets/images/gallery/gallery-07.jpg" className="popup-gallery">
+                                <img src="assets/images/gallery/gallery-07.jpg" alt="" className="img-fluid" />
                             </a>
                         </div>
                         <div className="col-lg-3 col-md-6 col-sm-6">
-                            <a href="images/gallery/gallery-08.jpg" className="popup-gallery">
-                                <img src="images/gallery/gallery-08.jpg" alt="" className="img-fluid" />
+                            <a href="assets/images/gallery/gallery-08.jpg" className="popup-gallery">
+                                <img src="assets/images/gallery/gallery-08.jpg" alt="" className="img-fluid" />
                             </a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Section Gallery END -->
-
-            <!-- Section Testimonial Start -->
             <section className="section textimonial position-relative bg-3">
                 <div className="container">
                     <div className="row justify-content-center">
@@ -283,9 +302,7 @@ class Home extends React.Component<HelloProps, {}> {
                     </div>
                 </div>
             </section>
-            <!-- Section Testimonial END -->
 
-            <!-- Section Course Start -->
             <section className="section course bg-gray">
                 <div className="container">
                     <div className="row justify-content-center">
@@ -301,7 +318,7 @@ class Home extends React.Component<HelloProps, {}> {
                     <div className="row">
                         <div className="col-lg-3 col-md-6">
                             <div className="card border-0 rounded-0 p-0 mb-5 mb-lg-0 shadow-sm">
-                                <img src="images/gallery/course-1.jpg" alt="" className="img-fluid">
+                                <img src="assets/images/gallery/course-1.jpg" alt="" className="img-fluid" />
 
                                     <div className="card-body">
                                         <a href="course-single.html"><h4 className="font-secondary mb-0">Build Body</h4></a>
@@ -312,7 +329,7 @@ class Home extends React.Component<HelloProps, {}> {
 
                         <div className="col-lg-3 col-md-6">
                             <div className="card border-0 rounded-0 p-0 mb-5 mb-lg-0 shadow-sm">
-                                <img src="images/gallery/course-2.jpg" alt="" className="img-fluid">
+                                <img src="assets/images/gallery/course-2.jpg" alt="" className="img-fluid" />
 
                                     <div className="card-body">
                                         <a href="course-single.html"><h4 className="font-secondary mb-0">Build Body</h4></a>
@@ -323,7 +340,7 @@ class Home extends React.Component<HelloProps, {}> {
 
                         <div className="col-lg-3 col-md-6">
                             <div className="card border-0 rounded-0 p-0 mb-5 mb-lg-0 shadow-sm">
-                                <img src="images/gallery/course-3.jpg" alt="" className="img-fluid">
+                                <img src="assets/images/gallery/course-3.jpg" alt="" className="img-fluid" />
 
                                     <div className="card-body">
                                         <a href="course-single.html"><h4 className="font-secondary mb-0">Build Body</h4></a>
@@ -333,7 +350,7 @@ class Home extends React.Component<HelloProps, {}> {
                         </div>
                         <div className="col-lg-3 col-md-6">
                             <div className="card border-0 rounded-0 p-0 mb-5 mb-lg-0 shadow-sm">
-                                <img src="images/gallery/course-2.jpg" alt="" className="img-fluid">
+                                <img src="assets/images/gallery/course-2.jpg" alt="" className="img-fluid" />
 
                                     <div className="card-body">
                                         <a href="course-single.html"><h4 className="font-secondary mb-0">Build Body</h4></a>
@@ -352,10 +369,7 @@ class Home extends React.Component<HelloProps, {}> {
                     </div>
                 </div>
             </section>
-            <!-- Section Course ENd -->
 
-            <!-- Section Footer Start -->
-            <!-- footer Start -->
             <footer className="footer bg-black-50">
                 <div className="container">
                     <div className="row">
@@ -412,10 +426,6 @@ class Home extends React.Component<HelloProps, {}> {
                     </div>
                 </div>
             </footer>
-            <!-- Section Footer End -->
-
-            <!-- Section Footer Scripts -->
-
-        </div>;
+        </div>
     }
 }

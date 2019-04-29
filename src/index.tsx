@@ -3,9 +3,13 @@ import "./scss/style.scss";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { Hello } from "./components/Hello";
+import { Home } from "./components/Home";
+import { NavigationBar } from "./components/NavigationBar";
 
 ReactDOM.render(
-    <Hello compiler="Typescript" framework="React(library)" />,
+    <section>
+        <NavigationBar />
+        <Home />
+    </section>,
     document.getElementById("root")
 )

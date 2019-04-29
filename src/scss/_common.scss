@@ -43,11 +43,11 @@ input[type="email"],input[type="password"],input[type="text"],input[type="tel"]{
 }
 
 
-.btn-main{
-  background:  linear-gradient(90deg, rgb(245, 99, 75) 0%, #fe9418 100%);
+.btn-main {
+  background:  linear-gradient(90deg, $darkner-primary-gradient 0%, $primary-color 100%);
   color: $light;
   &:hover{
-    background:  linear-gradient(90deg,  #fe9418 0%,rgb(245, 99, 75)  100%);
+    background:  linear-gradient(90deg,  $primary-color 0%,$darkner-primary-gradient  100%);
     color: $light!important;
      -webkit-transform: translateY(-5px);
         -moz-transform: translateY(-5px);

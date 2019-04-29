@@ -26,3 +26,6 @@ $RECYCLE.BIN/
 *.iml
 .idea/typescript-compiler.xml
 .idea/workspace.xml
+dist/*
+.idea/*
+*node_modules/*
