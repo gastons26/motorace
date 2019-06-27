@@ -60,4 +60,16 @@ module.exports = {
       {from:'src/assets',to:'assets'}
     ])
   ],
+
+
+  devServer: {
+
+    proxy: {
+      '/motorace/web/**': {
+        target: 'http://localhost',
+        changeOrigin:true
+      }
+    }
+  }
+
 };
