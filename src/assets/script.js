@@ -23,9 +23,9 @@
 				required: true,
 				email: true
 			},
-			// user_subject: {
-			// 	required: false
-			// },
+			user_subject: {
+			 	required: true
+			},
 			user_message: {
 				required: true
 			}

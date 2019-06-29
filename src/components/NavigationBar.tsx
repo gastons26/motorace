@@ -20,7 +20,7 @@ export class NavigationBar extends React.Component {
                             <Link to="/history" className="nav-link">Vēsture</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="training-rides" className="nav-link">Treniņbraucieni</Link>
+                            <Link to="/training-rides" className="nav-link">Treniņbraucieni</Link>
                         </li>
                         <li className="nav-item">
                             <Link to="/gallery" className="nav-link">Galerija</Link>

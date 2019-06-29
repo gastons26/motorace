@@ -1,6 +1,7 @@
 import * as React from "react";
 import {PriceStore} from "../stores/Price.store";
 import {PriceModel} from "../stores/models/PriceModel";
+import {Spinner} from "./Spinner";
 
 interface IState {
     error: any;
@@ -33,9 +34,6 @@ export class Price extends React.Component<any, IState> {
     }
 
     render(): React.ReactFragment {
-        if(this.state.isLoading) {
-            return <></>;
-        }
         return (
             <>
                 <div className="main-wrapper">
@@ -49,33 +47,34 @@ export class Price extends React.Component<any, IState> {
                                     </div>
                                 </div>
                             </div>
-
-                            <div className="row">
-                                <div className="col-xs-12">
-                                    <div className="table-responsive">
-                                        <table className="table table-bordered">
-                                            <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Objekts</th>
-                                                <th>Apraksts</th>
-                                                <th>Cena</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                                {this.state.items.map(((value, index) => (
-                                                    <tr key={index}>
-                                                        <td>{index + 1}</td>
-                                                        <td>{value.object}</td>
-                                                        <td>{value.description}</td>
-                                                        <td>{value.priceInfo}</td>
-                                                    </tr>
-                                                )))}
-                                            </tbody>
-                                        </table>
+                            <Spinner isLoading={this.state.isLoading}>
+                                <div className="row">
+                                    <div className="col-xs-12">
+                                        <div className="table-responsive">
+                                            <table className="table table-bordered">
+                                                <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Objekts</th>
+                                                    <th>Apraksts</th>
+                                                    <th>Cena</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {this.state.items.map(((value, index) => (
+                                                        <tr key={index}>
+                                                            <td>{index + 1}</td>
+                                                            <td>{value.object}</td>
+                                                            <td>{value.description}</td>
+                                                            <td>{value.priceInfo}</td>
+                                                        </tr>
+                                                    )))}
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </Spinner>
                         </div>
                     </section>
                 </div>

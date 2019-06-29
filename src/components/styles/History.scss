@@ -1,0 +1,19 @@
+@import '../../scss/variables';
+
+.history {
+  & .card {
+    cursor: pointer;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+    margin-bottom: 12px !important;
+  }
+
+  &__active-item {
+    & p, & span {
+      text-align: justify;
+      text-justify: inter-word;
+      white-space: pre-line;
+    }
+  }
+}

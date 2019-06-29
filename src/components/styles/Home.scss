@@ -1,0 +1,23 @@
+.nav-transparent {
+  background: rgba(6, 6, 6, 0.3);
+}
+
+.home {
+  &__slider {
+    padding-top: 110px;
+    padding-bottom: 100px;
+  }
+  &__top-title {
+    text-align: center;
+
+    & h1 {
+      font-size: 70px;
+      margin-bottom: 20px !important;
+    }
+  }
+
+  &__textimonial {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}

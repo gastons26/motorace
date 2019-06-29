@@ -1,0 +1,17 @@
+#map {
+  width: 100%;
+  height: 350px;
+  border: 1px solid silver;
+}
+
+#contact {
+  &__page {
+    & .alert {
+    margin-top: 12px;
+  }
+  }
+}
+
+#contact-form {
+  margin-top: 12px;
+}

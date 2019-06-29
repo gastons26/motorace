@@ -1,12 +1,23 @@
 
 .footer{
-    padding-top: 90px;
-    padding-bottom: 45px;
+    padding-top: 45px;
     p{
     	color: $light;
 		opacity: .8;
 		font-size: 14px;
     }
+
+		&--motorace-title {
+			margin-bottom: 11px;
+		}
+	
+		&__signature {
+			text-align: center;
+
+			& .col-lg-4 {
+				margin: 0 auto;
+			}
+		}
 }
 
 .bg-black{
