@@ -3,6 +3,7 @@ import './styles/Home.scss';
 import * as React from "react";
 import {ReactNode} from "react";
 import {Link} from "react-router-dom";
+import {GalleryList} from "./GalleryList";
 
 
 export class Home extends React.Component {
@@ -41,29 +42,35 @@ export class Home extends React.Component {
             <section className="mt-80px">
                 <div className="container">
                     <div className="row ">
-                        <div className="col-lg-4 col-md-6">
-                            <div className="card p-5 border-0 rounded-top border-bottom position-relative hover-style-1">
-                                <span className="number">01</span>
-                                <h3 className="mt-3">Vēsture</h3>
-                                <p className="mt-3 mb-4">Mototrase "Eriņi" darbību uzsāka 1985.gadā Valmieras rajona kolhoza "Cīņa" paspārnē un darbojās līdz 1990.gadam.</p>
-                                <Link to="/history" className="text-color text-uppercase font-size-13 letter-spacing font-weight-bold"><i className="ti-minus mr-2" />Skatīt vairāk</Link>
-                            </div>
+                        <div className="col-lg-4 col-md-6 home__intro-block">
+                            <Link to="/history">
+                                <div className="card p-5 border-0 rounded-top border-bottom position-relative hover-style-1">
+                                    <span className="number">01</span>
+                                    <h3 className="mt-3">Vēsture</h3>
+                                    <p className="mt-3 mb-4">Mototrase "Eriņi" darbību uzsāka 1985.gadā Valmieras rajona kolhoza "Cīņa" paspārnē un darbojās līdz 1990.gadam.</p>
+                                    <p className="text-color text-uppercase font-size-13 letter-spacing font-weight-bold"><i className="ti-minus mr-2" />Skatīt vairāk</p>
+                                </div>
+                            </Link>
                         </div>
-                        <div className="col-lg-4 col-md-6">
-                            <div className="card p-5 border-0 rounded-top hover-style-1">
-                                <span className="number">02</span>
-                                <h3 className="mt-3">Izklaide</h3>
-                                <p className="mt-3 mb-4">Lieliska vieta, kur ir apvienota vēsture ar mūsdienīgām atpūtas iespējām. Būs interesanti ikvienam!</p>
-                                <Link to="/price" className="text-color text-uppercase font-size-13 letter-spacing font-weight-bold"><i className="ti-minus mr-2" />Skatīt vairāk</Link>
-                            </div>
+                        <div className="col-lg-4 col-md-6 home__intro-block">
+                            <Link to="/price">
+                                <div className="card p-5 border-0 rounded-top hover-style-1">
+                                    <span className="number">02</span>
+                                    <h3 className="mt-3">Izklaide</h3>
+                                    <p className="mt-3 mb-4">Lieliska vieta, kur ir apvienota vēsture ar mūsdienīgām atpūtas iespējām. Būs interesanti ikvienam!</p>
+                                    <p className="text-color text-uppercase font-size-13 letter-spacing font-weight-bold"><i className="ti-minus mr-2" />Skatīt vairāk</p>
+                                </div>
+                            </Link>
                         </div>
-                        <div className="col-lg-4 col-md-6">
-                            <div className="card p-5 border-0 rounded-top hover-style-1">
-                                <span className="number">03</span>
-                                <h3 className="mt-3">Treniņbraucieni</h3>
-                                <p className="mt-3 mb-4">Mototrasē „Eriņi” piedāvājam treniņu sacensības komandām un individuālu apmācību iesācējiem</p>
-                                <Link to="/training-rides" className="text-color text-uppercase font-size-13 letter-spacing font-weight-bold"><i className="ti-minus mr-2" />Skatīt vairāk</Link>
-                            </div>
+                        <div className="col-lg-4 col-md-6 home__intro-block">
+                            <Link to="/training-rides">
+                                <div className="card p-5 border-0 rounded-top hover-style-1">
+                                    <span className="number">03</span>
+                                    <h3 className="mt-3">Treniņbraucieni</h3>
+                                    <p className="mt-3 mb-4">Mototrasē „Eriņi” piedāvājam treniņu sacensības komandām un individuālu apmācību iesācējiem</p>
+                                    <p className="text-color text-uppercase font-size-13 letter-spacing font-weight-bold"><i className="ti-minus mr-2" />Skatīt vairāk</p>
+                                </div>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -137,50 +144,8 @@ export class Home extends React.Component {
                         </div>
                     </div>
 
-                    <div className="row">
-                        <div className="col-lg-3 col-md-6">
-                            <div className="card border-0 rounded-0 p-0 mb-5 mb-lg-0 shadow-sm">
-                                <img src="assets/images/gallery/course-1.jpg" alt="" className="img-fluid" />
+                    <GalleryList />
 
-                                    <div className="card-body">
-                                        <a href="course-single.html"><h4 className="font-secondary mb-0">Build Body</h4></a>
-                                        <p className=" mb-2">Mentor: Jimmy Karter</p>
-                                    </div>
-                            </div>
-                        </div>
-
-                        <div className="col-lg-3 col-md-6">
-                            <div className="card border-0 rounded-0 p-0 mb-5 mb-lg-0 shadow-sm">
-                                <img src="assets/images/gallery/course-2.jpg" alt="" className="img-fluid" />
-
-                                    <div className="card-body">
-                                        <a href="course-single.html"><h4 className="font-secondary mb-0">Build Body</h4></a>
-                                        <p className="mb-2">Mentor: Jimmy Karter</p>
-                                    </div>
-                            </div>
-                        </div>
-
-                        <div className="col-lg-3 col-md-6">
-                            <div className="card border-0 rounded-0 p-0 mb-5 mb-lg-0 shadow-sm">
-                                <img src="assets/images/gallery/course-3.jpg" alt="" className="img-fluid" />
-
-                                    <div className="card-body">
-                                        <a href="course-single.html"><h4 className="font-secondary mb-0">Build Body</h4></a>
-                                        <p className="mb-2">Mentor: Jimmy Karter</p>
-                                    </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-md-6">
-                            <div className="card border-0 rounded-0 p-0 mb-5 mb-lg-0 shadow-sm">
-                                <img src="assets/images/gallery/course-2.jpg" alt="" className="img-fluid" />
-
-                                    <div className="card-body">
-                                        <a href="course-single.html"><h4 className="font-secondary mb-0">Build Body</h4></a>
-                                        <p className=" mb-2">Mentor: Jimmy Karter</p>
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </section>
         </div>

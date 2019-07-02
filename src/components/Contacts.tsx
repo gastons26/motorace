@@ -99,7 +99,7 @@ export class Contacts extends React.Component<{}, IState> {
                                 <div id="map" />
                             </div>
                             <div className="col-sm-12 col-lg-6">
-                                <div>"Lejeriņi", Ķoņu pag., Valmieras raj. LV-4240</div>
+                                <div>"Lejeriņi", Ķoņu pag., Naukšēnu nov., LV-4240</div>
                                 <div>(+371) 26 514 524 </div>
                                 <div>Epasts: <a href="mailto:fuksko@inbox.lv">fuksko@inbox.lv</a></div>
 

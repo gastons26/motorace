@@ -75,6 +75,12 @@ export class Price extends React.Component<any, IState> {
                                     </div>
                                 </div>
                             </Spinner>
+                            <p>
+                                 * Pirms uzsākt braucienus ar krosa motociklu pa trasi, obligāti jāiepazīstas ar
+                                <a href="/assets/pdf/Mototrases_ekspluatacija.pdf" target="_blank"> "Mototrases "Eriņi" ekspluatācijas noteikumi" </a>
+                                un <a href="/assets/pdf/ERINI_lietosanas_noteikumi.pdf" target="_blank">"Mototrases „Eriņi”Izmantošanas atbildība"</a>. Pēc iepazīšanās ar iepriekšminētajiem noteikumiem jāparakstās reģistrācijas žurnālā.
+                            </p>
+                            <p>Grupas iepriekš pieteikt!!!</p>
                         </div>
                     </section>
                 </div>

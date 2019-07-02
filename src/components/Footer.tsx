@@ -28,7 +28,7 @@ export class Footer extends React.Component {
                         <div className="col-lg-3 col-md-4">
                             <div className="footer-widget">
                                 <h4 className="mb-4 text-white letter-spacing text-uppercase">Adrese</h4>
-                                <p>"Lejeriņi", Ķoņu pag., Valmieras raj. LV-4240 </p>
+                                <p>"Lejeriņi", Ķoņu pag., Naukšēnu nov., LV-4240 </p>
                                 <span className="text-white">(+371) 26 514 524 </span>
                                 <a href="mailto: fuksko@inbox.lv" className="text-white">fuksko@inbox.lv</a>
                             </div>
