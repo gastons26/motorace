@@ -20,7 +20,7 @@ export class GalleryStore {
     }
 
     public async getImages(galId: number): Promise<GalleryImageModel[]> {
-        return (await axios.get(`${ApiConfig.API_BASE_URL}/gallery/images?id=1`)).data;
+        return (await axios.get(`${ApiConfig.API_BASE_URL}/gallery/images?id=${galId}`)).data;
 
     }
 
