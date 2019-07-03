@@ -29,16 +29,18 @@ export class Contacts extends React.Component<{}, IState> {
     componentDidMount(): void {
         const myLatLng = { lat: 57.903702, lng: 25.3615862 };
 
-        const map = new google.maps.Map(document.getElementById('map'), {
-            center: myLatLng,
-            zoom: 11,
-        });
+        setTimeout(() => {
+            const map = new google.maps.Map(document.getElementById('map'), {
+                center: myLatLng,
+                zoom: 11,
+            });
 
-        new google.maps.Marker({
-            position: myLatLng,
-            map: map,
-            title: 'Mototrase "Eriņi"'
-        });
+            new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'Mototrase "Eriņi"'
+            });
+        }, 750);
     }
 
     async handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -143,7 +145,7 @@ export class Contacts extends React.Component<{}, IState> {
         </>;
     }
 
-    private showValidationMessage = () => {
+    private showValidationMessage(): React.ReactFragment  {
         const { submitErrMessage, submitSuccessMessage } = this.state;
 
         if(submitSuccessMessage) {
@@ -157,7 +159,7 @@ export class Contacts extends React.Component<{}, IState> {
                 {submitErrMessage}
             </div>;
         }
-
+        return <></>;
     };
 
     private isValidData(userName: string, userMail: string, userMessage: string): boolean {

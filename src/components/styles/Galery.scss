@@ -1,6 +1,10 @@
 .gallery {
   &__block {
     cursor: pointer;
+
+    & img {
+      min-height: 1px;
+    }
   }
   &__modal {
     position: fixed;

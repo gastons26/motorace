@@ -14,10 +14,8 @@ import {Price} from "./components/Price";
 import {Gallery} from "./components/Gallery";
 
 ReactDOM.render(
-
-    <Router>
+   <Router>
         <NavigationBar />
-
         <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/history" component={History} />
@@ -28,6 +26,6 @@ ReactDOM.render(
         </Switch>
 
         <Footer />
-    </Router>,
-    document.getElementById("root")
+   </Router>,
+   document.getElementById("root")
 );

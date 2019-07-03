@@ -113,6 +113,7 @@ export class GalleryList extends React.Component<{}, IState> {
 
         if(showModal) {
             this.hideScrollbar(true);
+
             return ReactDOM.createPortal((
                 <div className="gallery__modal">
                     <div className="row">
@@ -136,11 +137,11 @@ export class GalleryList extends React.Component<{}, IState> {
                             <i className="ti-angle-right"  onClick={() => this.activeImage = +1} />
                         </div>
                     </div>
-                </div>), document.getElementById('modal-screen'));
+                </div>), document.getElementById('modal-screen') as Element);
         }
 
         this.hideScrollbar(false);
-        return null;
+        return <></>;
     }
 
     private hideScrollbar(hide: boolean): void {

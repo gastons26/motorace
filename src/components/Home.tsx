@@ -9,6 +9,7 @@ import {GalleryList} from "./GalleryList";
 export class Home extends React.Component {
     async componentDidMount() {
 
+        // @ts-ignore
         document.getElementById("navbar").classList.add('nav-transparent');
 
         (window as any).$('.testimonial-slider').slick({
@@ -22,6 +23,7 @@ export class Home extends React.Component {
     };
 
     componentWillUnmount(): void {
+        // @ts-ignore
         document.getElementById("navbar").classList.remove('nav-transparent');
     }
 
@@ -103,13 +105,6 @@ export class Home extends React.Component {
                                     <h3 className="mt-4 text-white letter-spacing">i.moto</h3>
                                     <p className="my-4 text-white-50">
                                         Trase ļoti laba. Kompakta un arī ātra,lieliska skatītājiem.Tramplīni patika.Iesācējiem piemērota un arī pro.Paldies!!
-                                    </p>
-                                </div>
-
-                                <div className="text-center">
-                                    <h3 className="mt-4 text-white letter-spacing">juriz</h3>
-                                    <p className="my-4 text-white-50">
-                                        Lielisks pasākums bija vasaras vidū pie jums! varētu tomēr rīkot tādus pasāskumus katru gadu, vienkārši lai motosportistiem, amatieriem, motociklistiem, un pārējiem entuziastiem ar savu tehniku būtu kur tikties un sabraukt! ceru ka līdzīgi pasākumi vēl būs :)
                                     </p>
                                 </div>
 
