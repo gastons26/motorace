@@ -1,7 +1,6 @@
 .gallery {
   &__block {
     cursor: pointer;
-
     & img {
       min-height: 1px;
     }
@@ -17,6 +16,8 @@
     & img {
       height: calc(100vh - 28px);
       padding: 0 30px 30px 30px;
+      max-width: 1200px;
+      max-height: 1200px;
     }
 
     & iframe {

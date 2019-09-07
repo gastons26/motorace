@@ -1,6 +1,5 @@
 /*=== MEDIA QUERY ===*/
 
-
 @include mobile-xs{
  .dropdown-menu {
       display: none;
@@ -8,12 +7,15 @@
       text-align: center;
   }
   .navbar-nav li{
-      padding: 0px;
+      padding: 0;
   }
 }
+
+
+
 @include mobile{
   .slider h1 {
-      font-size: 40px;
+      font-size: 40px !important;
       line-height: 48px;
   }
 
@@ -39,7 +41,7 @@
       line-height: 65px;
     }
 
-    
+
     .dropdown-menu {
       display: none;
       text-align: center;
@@ -61,7 +63,7 @@
     .services .media img{
       width: 100%!important;
     }
-    
+
     .dropdown-menu {
       display: none;
       text-align: center;
@@ -79,5 +81,12 @@
 @include large-desktop{
    .navbar-nav .dropdown-menu{
     // display: block;
+  }
+}
+
+@include desktop {
+  .container {
+    width: 100% !important;
+    max-width: unset !important;
   }
 }
